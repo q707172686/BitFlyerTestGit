@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="userViewModel" type="jp.co.bitFlyer.githubClient.viewModel.UserViewModel"/>
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/head_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:fitsSystemWindows="true">
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true">
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentScrim="@color/colorPrimary"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingTop="190dp"
+                    android:paddingBottom="40dp">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/profile_image"
+                        android:layout_width="@dimen/logo_width"
+                        android:layout_height="@dimen/logo_height"
+                        android:src="@drawable/github"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="#D3C11E"/>
+<!--                    <TextView-->
+<!--                        android="@+id/name_text"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="@{userModel.name}"-->
+<!--                        android:textColor="@android:color/white"-->
+<!--                        android:textSize="20sp"-->
+<!--                        android:textStyle="bold" />-->
+<!--                    <TextView-->
+<!--                        android:id="@+id/blog_text"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="@{userModel.blog}"-->
+<!--                        android:textColor="@android:color/white"-->
+<!--                        android:textSize="20sp"-->
+<!--                        android:textStyle="bold" />-->
+                </LinearLayout>
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/mToolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                 />
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/repo_list_button"
+        style="?android:attr/borderlessButtonStyle"
+        android:background="#1284DF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_18"
+        android:insetTop="@dimen/dp_0"
+        android:insetBottom="@dimen/dp_0"
+        android:padding="@dimen/dp_0"
+        android:text="@string/repo_list"
+        android:textStyle="bold"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20sp"
+        app:cornerRadius="@dimen/dp_16"
+        app:layout_constraintTop_toBottomOf="@+id/head_layout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:backgroundTint="@color/colorPrimary" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
