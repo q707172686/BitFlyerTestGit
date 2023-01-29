@@ -1,4 +1,9 @@
 
+<p>  
+  <code><img width="15%" src="https://github.com/q707172686/BitFlyerTestGit/blob/main/user.png"></code>
+  <code><img width="15%" src="https://github.com/q707172686/BitFlyerTestGit/blob/main/user.png"></code>
+  <code><img width="15%" src="https://github.com/q707172686/BitFlyerTestGit/blob/main/user.png"></code>
+</p>
 今後追加予定の機能
 １、モジュール化、モジュールにより各機能を分けます。
 ログイン、通信部品、my Pageなどモジュールを追加します。
