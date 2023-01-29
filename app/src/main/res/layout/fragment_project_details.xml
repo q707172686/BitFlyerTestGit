@@ -29,9 +29,9 @@
             app:visibleGone="@{!isLoading}">
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="@dimen/logo_width"
-                android:layout_height="@dimen/logo_height"
-                android:src="@drawable/github"
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:src="@drawable/git_detail"
                 android:contentDescription="@null" />
             <TextView
                 android:id="@+id/name"
@@ -71,7 +71,6 @@
                 android:contentDescription="@string/open_issues"
                 android:textSize="@dimen/project_text"
                 android:text="@{String.format(@string/openIssues, projectViewModel.project.open_issues)}"/>
-
             <TextView
                 android:id="@+id/project_created_at"
                 android:layout_width="match_parent"

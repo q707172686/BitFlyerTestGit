@@ -45,7 +45,7 @@ class UserFragment : Fragment() {
         })
 
         // ボタンイベント
-        binding.repoListButton.setOnClickListener {
+        binding.repoList.setOnClickListener {
             if (lifecycle.currentState.isAtLeast(Lifecycle.State.STARTED) && activity is MainActivity) {
                 (activity as MainActivity).showList()
             }
