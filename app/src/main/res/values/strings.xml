@@ -3,6 +3,7 @@
     <string name="loading_projects">Loading projects …</string>
     <string name="project_name">タイトル</string>
     <string name="github_projects">リポジトリ一覧</string>
+    <string name="github_project_detail">リポジトリ詳細</string>
     <string name="project_list">Project List</string>
     <string name="languages">プログラミング言語: %s</string>
     <string name="watchers">Watchers: %s</string>
