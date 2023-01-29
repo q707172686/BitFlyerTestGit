@@ -39,12 +39,8 @@ class UserFragment : Fragment() {
         viewModel.userData.observe(viewLifecycleOwner, Observer { user ->
             user?.let {
                 binding.isLoading = false
-               // binding.userModel = user
-                // 名前
-                binding.nameText.text = user.name
-//                // メール
-                binding.mailText.text = user.email
-                // 状態
+                // 画面にユーザ情報を反映
+                viewModel.setUser(user)
             }
         })
 
@@ -54,7 +50,5 @@ class UserFragment : Fragment() {
                 (activity as MainActivity).showList()
             }
         }
-
-
     }
 }

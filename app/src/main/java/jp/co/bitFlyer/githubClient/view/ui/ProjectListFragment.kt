@@ -18,6 +18,9 @@ import jp.co.bitFlyer.githubClient.viewModel.ProjectListViewModel
 
 const val TAG_OF_PROJECT_LIST_FRAGMENT = "ProjectListFragment"
 
+/**
+ * リポジトリ一覧
+ */
 class ProjectListFragment : Fragment() {
 
     private val viewModel by lazy {
@@ -51,9 +54,4 @@ class ProjectListFragment : Fragment() {
             }
         })
     }
-
-//    override fun onActivityCreated(savedInstanceState: Bundle?) {
-//        super.onActivityCreated(savedInstanceState)
-//
-//    }
 }

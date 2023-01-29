@@ -17,4 +17,7 @@
     <string name="loading_project">Loading Project …</string>
     <string name="github_user_name">google</string>
     <string name="repo_list">リポジトリ一覧</string>
+    <string name="name">名前: %s</string>
+    <string name="blog">状態: %s</string>
+    <string name="email">メール: %s</string>
 </resources>

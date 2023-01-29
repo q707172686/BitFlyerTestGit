@@ -7,8 +7,7 @@
         <variable name="isLoading" type="boolean" />
         <variable name="userViewModel" type="jp.co.bitFlyer.githubClient.viewModel.UserViewModel"/>
     </data>
-
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <TextView
@@ -29,12 +28,14 @@
             android:paddingTop="@dimen/activity_vertical_margin"
             android:orientation="vertical"
             app:visibleGone="@{!isLoading}">
-            <ImageView
-                android:id="@+id/imageView"
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile_image"
                 android:layout_width="@dimen/logo_width"
                 android:layout_height="@dimen/logo_height"
                 android:src="@drawable/github"
-                android:contentDescription="@null" />
+                app:civ_border_width="2dp"
+                app:civ_border_color="#D3C11E"/>
             <TextView
                 android:id="@+id/name_text"
                 android:layout_width="wrap_content"
@@ -42,24 +43,36 @@
                 android:contentDescription="@string/project_name"
                 android:textStyle="bold"
                 android:textSize="@dimen/project_header1"
-                android:text="@{userViewModel.userData.name}"
+                android:text="@{String.format(@string/name, userViewModel.user.name)}"
                 android:textAlignment="center"
                 android:paddingBottom="5dp"/>
             <TextView
-                android:id="@+id/mail_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/project_description"
-                android:textSize="@dimen/project_header2"
-                android:text="@{userViewModel.userData.email}"/>
-            
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/repo_list_button"
-                android:text="@string/repo_list"
+                android:id="@+id/blog_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                />
-
+                android:text="@{String.format(@string/blog, userViewModel.user.blog)}"
+                android:contentDescription="@string/project_description"
+                android:textSize="@dimen/project_header2" />
+            <TextView
+                android:id="@+id/mail_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.format(@string/email, userViewModel.user.email)}"
+                android:contentDescription="@string/project_description"
+                android:textSize="@dimen/project_header2" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/repoListButton"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_44"
+                android:layout_marginStart="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_35"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/selector_login_bg"
+                android:enabled="false"
+                android:text="@string/repo_list"
+                android:textAllCaps="false"
+                android:textColor="@drawable/selector_login_text_color"
+                android:textSize="16sp" />
         </LinearLayout>
-    </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

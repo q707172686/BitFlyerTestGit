@@ -14,6 +14,10 @@ import jp.co.bitFlyer.githubClient.R
 import jp.co.bitFlyer.githubClient.databinding.FragmentProjectDetailsBinding
 import jp.co.bitFlyer.githubClient.viewModel.ProjectViewModel
 
+/**
+ * リポジトリ詳細
+ * @author shin
+ */
 class ProjectFragment : Fragment() {
 
     companion object {
@@ -23,7 +27,6 @@ class ProjectFragment : Fragment() {
             arguments = Bundle().apply { putString(KEY_PROJECT_ID, projectId) }
         }
     }
-
     private val projectId by lazy {
         requireNotNull(
                 arguments?.getString(KEY_PROJECT_ID)

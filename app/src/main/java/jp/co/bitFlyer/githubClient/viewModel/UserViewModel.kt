@@ -1,11 +1,13 @@
 package jp.co.bitFlyer.githubClient.viewModel
 
 import android.app.Application
+import androidx.databinding.ObservableField
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 
 import jp.co.bitFlyer.githubClient.R
+import jp.co.bitFlyer.githubClient.service.model.Project
 import jp.co.bitFlyer.githubClient.service.model.User
 import jp.co.bitFlyer.githubClient.service.repository.ProjectRepository
 import kotlinx.coroutines.launch
@@ -18,7 +20,7 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository = ProjectRepository.instance
     var userData: MutableLiveData<User> = MutableLiveData()
-
+    var user = ObservableField<User>()
     init {
         // ユーザ情報を取得
         getUserInfo()
@@ -36,5 +38,12 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
         } catch (e: Exception) {
             e.stackTrace
         }
+    }
+
+    /**
+     * ユーザ情報を設定
+     */
+    fun setUser(user:User) {
+        this.user.set(user)
     }
 }
